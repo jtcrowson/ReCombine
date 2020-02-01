@@ -168,7 +168,7 @@
 <p>2)  Create a new file named <code>Counter.swift</code> to describe the counter actions to increment, decrement, and reset its value.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
 
-<span class="kd">struct</span> <span class="kt">Counter</span> <span class="p">{</span>
+<span class="kd">enum</span> <span class="kt">Counter</span> <span class="p">{</span>
     <span class="kd">struct</span> <span class="kt">Increment</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
     <span class="kd">struct</span> <span class="kt">Decrement</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
     <span class="kd">struct</span> <span class="kt">Reset</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
@@ -178,7 +178,7 @@
 <p>3)  Define a state and an associated reducer function to handle changes in the counter value based on the provided actions.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
 
-<span class="kd">struct</span> <span class="kt">Counter</span> <span class="p">{</span>
+<span class="kd">enum</span> <span class="kt">Counter</span> <span class="p">{</span>
     <span class="kd">struct</span> <span class="kt">Increment</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
     <span class="kd">struct</span> <span class="kt">Decrement</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
     <span class="kd">struct</span> <span class="kt">Reset</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>

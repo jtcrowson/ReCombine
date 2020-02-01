@@ -164,7 +164,7 @@
 <p>First, define some actions for interacting with a piece of state.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
 
-<span class="kd">struct</span> <span class="kt">ScoreboardPage</span> <span class="p">{</span>
+<span class="kd">enum</span> <span class="kt">ScoreboardPage</span> <span class="p">{</span>
     <span class="kd">struct</span> <span class="kt">HomeScore</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
     <span class="kd">struct</span> <span class="kt">AwayScore</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
     <span class="kd">struct</span> <span class="kt">ResetScore</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
@@ -181,7 +181,7 @@
 <p>Each reducer function is a listener of actions. The scoreboard actions defined above describe the possible transitions handled by the reducer.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
 
-<span class="kd">struct</span> <span class="kt">ScoreboardPage</span> <span class="p">{</span>
+<span class="kd">enum</span> <span class="kt">ScoreboardPage</span> <span class="p">{</span>
     <span class="c1">// Actions...</span>
 
     <span class="kd">struct</span> <span class="kt">State</span> <span class="p">{</span>
@@ -197,7 +197,7 @@
 <p>The reducer function&rsquo;s responsibility is to handle the state transitions in an immutable way. Create a reducer function that handles the actions for managing the state of the scoreboard.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
 
-<span class="kd">struct</span> <span class="kt">ScoreboardPage</span> <span class="p">{</span>
+<span class="kd">enum</span> <span class="kt">ScoreboardPage</span> <span class="p">{</span>
 
     <span class="c1">// Actions...</span>
 

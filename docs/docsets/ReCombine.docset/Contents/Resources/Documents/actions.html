@@ -166,7 +166,7 @@
 <p>It can be helpful to group similar actions by category as well:</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
 
-<span class="kd">struct</span> <span class="kt">Counter</span> <span class="p">{</span>
+<span class="kd">enum</span> <span class="kt">Counter</span> <span class="p">{</span>
     <span class="kd">struct</span> <span class="kt">Increment</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
     <span class="kd">struct</span> <span class="kt">Decrement</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
     <span class="c1">// other counter actions...</span>
@@ -176,7 +176,7 @@
 <p>These actions describe events triggered by a user clicking on the increment and decrement buttons on the UI.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
 
-<span class="kd">struct</span> <span class="kt">Authentication</span> <span class="p">{</span>
+<span class="kd">enum</span> <span class="kt">Authentication</span> <span class="p">{</span>
     <span class="kd">struct</span> <span class="kt">Login</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
         <span class="k">let</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span>
         <span class="k">let</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span>
@@ -202,7 +202,7 @@
 <p>Let&rsquo;s look at an example action of initiating a login request.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
 
-<span class="kd">struct</span> <span class="kt">Authentication</span> <span class="p">{</span>
+<span class="kd">enum</span> <span class="kt">Authentication</span> <span class="p">{</span>
     <span class="kd">struct</span> <span class="kt">Login</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
         <span class="k">let</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span>
         <span class="k">let</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span>
