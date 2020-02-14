@@ -27,3 +27,4 @@ See the full documentation on [ReCombine.io](https://recombine.io)
 ## Inspiration
 
 The API is inspired by [NgRx](https://ngrx.io/), Angular's most popular Redux framework.
+
