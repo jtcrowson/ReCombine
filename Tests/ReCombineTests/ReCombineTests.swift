@@ -165,6 +165,7 @@ final class ReCombineTests: XCTestCase {
         let expectationReceiveValue = expectation(description: "receiveValue")
         store.dispatch(action: Action1())
         cancellable = store.sink(receiveValue: { state in
+            print(state)
             XCTAssertTrue(state.lastActionIsAction2)
             expectationReceiveValue.fulfill()
         })
@@ -193,7 +194,7 @@ final class ReCombineTests: XCTestCase {
         // Cancellable lifetime begins
         cancellable = store.register(ReCombineTests.registerThisLater)
         store.dispatch(action: Home.Score())
-        store.filter { state in state.home.score == 3 }.sink(receiveValue: { [weak self] state in
+        store.filter { state in state.home.score == 3 && state.away.score == 1 }.sink(receiveValue: { [weak self] state in
             XCTAssertEqual(3, state.home.score)
             XCTAssertEqual(1, state.away.score)
             // Cancellable lifetime ends
@@ -202,7 +203,7 @@ final class ReCombineTests: XCTestCase {
             expectationReceiveValueOf3.fulfill()
             }).store(in: &cancellableSet)
         
-        store.filter { state in state.home.score == 4 }.sink(receiveValue: { state in
+        store.filter { state in state.home.score == 4 && state.away.score == 1 }.sink(receiveValue: { state in
             XCTAssertEqual(4, state.home.score)
             XCTAssertEqual(1, state.away.score)
             expectationReceiveValueOf4.fulfill()

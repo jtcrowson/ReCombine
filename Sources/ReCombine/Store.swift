@@ -8,6 +8,7 @@
 //
 
 import Combine
+import Foundation
 
 /// Protocol that all action's must implement.
 ///
@@ -108,6 +109,7 @@ open class Store<S>: Publisher {
         for effect in effects {
             effect.source(actionSubject.eraseToAnyPublisher())
                 .filter { _ in return effect.dispatch }
+                .receive(on: RunLoop.main)
                 .sink(receiveValue: { action in self.dispatch(action: action)})
                 .store(in: &cancellableSet)
         }
@@ -182,6 +184,7 @@ open class Store<S>: Publisher {
     open func register(_ effect: Effect) -> AnyCancellable {
         return effect.source(actionSubject.eraseToAnyPublisher())
             .filter { _ in return effect.dispatch }
+            .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] action in self?.dispatch(action: action) })
     }
 }
